@@ -15,7 +15,7 @@ export default function Register() {
     try {
       const res = await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
       localStorage.setItem('token', res.data.token); // Store the token
-      router.push('/'); // Redirect to home page
+      router.push('/login'); // Redirect to home page
     } catch (err) {
       if (axios.isAxiosError(err)) {
         // Handle Axios-specific errors

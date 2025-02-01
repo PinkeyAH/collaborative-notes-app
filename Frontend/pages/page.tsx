@@ -73,7 +73,9 @@ export default function Home() {
   // Delete a note
   const handleDeleteNote = async (id: string) => {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:5000/api/notes/${id}`, {
+    const host = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:5000';
+
+    await axios.delete(`${host}/api/notes/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchNotes();
