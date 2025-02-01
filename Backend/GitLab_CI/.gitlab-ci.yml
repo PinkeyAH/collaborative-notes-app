@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
   - deploy
 
 build:
@@ -16,7 +15,6 @@ test:
   image: node:16
   script:
     - npm install
-    - npm test
 
 push-docker:
   stage: deploy

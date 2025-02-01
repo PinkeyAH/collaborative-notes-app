@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Register() {
   const [username, setUsername] = useState('');
@@ -64,9 +65,9 @@ export default function Register() {
       </form>
       <p className="mt-4">
         Already have an account?{' '}
-        <a href="/login" className="text-blue-500">
+        <Link href="/login" className="text-blue-500">
           Login here
-        </a>
+        </Link>
       </p>
     </div>
   );
